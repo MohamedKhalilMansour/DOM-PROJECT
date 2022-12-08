@@ -20,6 +20,29 @@ var prices = parseFloat(priceElement.innerText.replace('$', ''))
 console.log(prices)
 }
 }
+var plus = document.querySelectorAll('.plus')
+var minus = document.querySelectorAll('.minus')
+var deletee =document.querySelectorAll('.delete')
+console.log(plus);
+console.log(minus);
+console.log(deletee)
+plus.forEach(el =>
+    el.addEventListener('click', () => {
+       console.log(el.nextElementSibling.innerHTML++)
+    })
+)
+minus.forEach(el =>
+          el.addEventListener('click', () => {
+              if (el.previousElementSibling.innerHTML > 0 ) {
+                  console.log(el.previousElementSibling.innerHTML--) 
+              }   
+          })
+  )
+  deletee.forEach(el => 
+      el.addEventListener('click' , () => {
+          el.parentElement.parentElement.remove()
+      })
+  )
 
 
 //button Like
@@ -27,33 +50,6 @@ function myFunction(a) {
     console.log(a)
     a.classList.toggle("ilike");
   }
-
-
-// adding Items (plus , minus , quantity) + deletee boxes
-
-// var plus = document.querySelectorAll('.plus')
-// var minus = document.querySelectorAll('.minus')
-// var deletee =document.querySelectorAll('.delete')
-// console.log(plus);
-// console.log(minus);
-// console.log(deletee)
-// plus.forEach(el =>
-//     el.addEventListener('click', () => {
-//        console.log(el.nextElementSibling.innerHTML++)
-//     })
-// )
-// minus.forEach(el =>
-//         el.addEventListener('click', () => {
-//             if (el.previousElementSibling.innerHTML > 0 ) {
-//                 console.log(el.previousElementSibling.innerHTML--) 
-//             }   
-//         })
-// )
-// deletee.forEach(el => 
-//     el.addEventListener('click' , () => {
-//         el.parentElement.parentElement.remove()
-//     })
-// )
 
 
 
@@ -73,15 +69,7 @@ function myFunction(a) {
 //     })
 //     }
 
-     
- 
-   
-        
-    
-    
-    
-     
 
 
 
-        
+
